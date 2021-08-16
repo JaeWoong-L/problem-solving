@@ -1,13 +1,14 @@
 /*************************************
-  - Silver 4
+ 정렬, 이분탐색 - Silver 4
  숫자 카드 2
+ *upper bound, lower bound 직접 구현해 볼 필요 있음.
 *************************************/ 
 #include <iostream>
+#include <vector>
 #include <algorithm>
 using namespace std;
 int deck[500000];
 int quiz[500000];
-int answer[500000] = {0};
 
 int main() {
     int N, M;
@@ -24,27 +25,10 @@ int main() {
     sort(deck, deck + N);
 
     for(int i = 0; i < M; i++) {
-        int count = 0;    
-        int left = 0;
-        int right = N - 1;
-        while(left <= right) {
-            int mid = (left + right) / 2;
-            if(deck[mid] == quiz[i]) {
-                if(mid == N-1) {
-                    count++;
-                    break;
-                }
-                else if(mid == 0) {}
-            }
-            else if(deck[mid] > quiz[i]) {
-                right = mid - 1;
-            }
-            else {
-                left = mid + 1;
-            }
-        }
-
-        cout << count << " ";
+        int *start, *end;
+        start = lower_bound(deck, deck + N, quiz[i]);
+        end = upper_bound(deck, deck + N, quiz[i]);
+        cout << end - start << " ";
     }
 
     return 0;
