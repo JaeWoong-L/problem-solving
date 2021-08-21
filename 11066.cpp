@@ -5,7 +5,6 @@
  * 점화식 찾을 때 문제의 핵심에 맞게 접근하는 것이 중요하다.
 *************************************/
 #include <iostream>
-#include <iomanip>
 using namespace std;
 int T, K;
 int dp[501][501] = {0}; // dp[x][y] = n  =>  x번째 행렬부터 y번째 행렬까지 곱할 때 최소 연산 수 = n
