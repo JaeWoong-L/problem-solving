@@ -1,5 +1,5 @@
 *.exe
 test.*
 *.txt
-tempCodeRunnerFile.cpp
+tempCodeRunnerFile.*
 .vscode/*
