@@ -64,7 +64,7 @@ vector<int> findInt(string s) {
         if(c >= '0' && c <= '9') {
             num = num * 10 + (c - '0');
         }
-        else {
+        else if(num > 0){
             answer.push_back(num);
             num = 0;
         }
