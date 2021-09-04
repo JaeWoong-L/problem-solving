@@ -1,5 +1,5 @@
 *.exe
-test.*
+test*.*
 *.txt
 tempCodeRunnerFile.*
 .vscode/*
